@@ -9,7 +9,7 @@ import { useFetchData } from "../../../HOC/useFetchData";
 import Aurora from "../../UI/Aura";
 export const BolidTeam = () => {
   const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo-9a1db4a8e2e6.herokuapp.com/getImages"
+    "http://localhost:3001/getImages"
   );
 
   const goYT = () => {
