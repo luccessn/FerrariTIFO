@@ -2,13 +2,12 @@ import React from "react";
 import { useFetchData } from "../../HOC/useFetchData";
 export const FirstSlide = () => {
   const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo-9a1db4a8e2e6.herokuapp.com/getImages"
+    "https://ferraritifo.onrender.com/getImages"
   );
   console.log(info);
   if (error) {
     return <h1>ER: {error}</h1>;
   }
-  console.log(info);
 
   return (
     <div>
@@ -27,4 +26,3 @@ export const FirstSlide = () => {
     </div>
   );
 };
-// "http://localhost:3001/getImages"

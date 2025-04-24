@@ -9,7 +9,7 @@ import { useFetchData } from "../../../HOC/useFetchData";
 import Aurora from "../../UI/Aura";
 export const BolidTeam = () => {
   const [info, error, isLoading] = useFetchData(
-    "http://localhost:3001/getImages"
+    "https://ferraritifo.onrender.com/getImages"
   );
 
   const goYT = () => {
@@ -40,7 +40,7 @@ export const BolidTeam = () => {
         });
         gsap.set(teamRef2.current, {
           y: isMobile ? 1200 : isTablet ? 1400 : 1600,
-          opacity: 1,
+          opacity: 0,
         });
         gsap.set(f25Ref.current, {
           y: 0,
@@ -158,45 +158,74 @@ export const BolidTeam = () => {
   }
   return (
     <div
-      className={`w-full h-[800px] relative top-40 text-white transition-all flex gap-96   flex-col  duration-1000 ease-out ${
+      className={`w-full h-[800px] relative top-40 md:top-96 text-white transition-all flex gap-96   flex-col  duration-1000 ease-out ${
         state.visibleOut
           ? "opacity-100 translate-y-0"
           : "opacity-0 -translate-y-10"
       }`}
     >
-      <div className="flex flex-col gap-96">
-        <div className="flex flex-row gap-20 md:gap-72">
+      <div className="flex flex-col gap-52 sm:gap-80 mmd:gap-96">
+        <div className="flex flex-col gap-56 smm:flex-row smm:gap-20 md:gap-72">
           <div ref={teamRef1} className="relative -top-28 xl:-top-20 xxl:top-0">
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               alt=""
               src={info[0]?.team?.teamF1}
-              className=" w-[800px] ssm:h-[150px]  smm:h-[200px] smm:w-[900px] sm:h-[250px] mmd:h-[300px] lg:h-[350px] xl:w-[700px] xl:h-[450px] xxl:w-[800px] xxl:h-[500px] "
+              className=" h-[200px] w-[300px] sfm:w-[350px] sfm:h-[250px]  smm:h-[200px]  smm:w-[900px] sm:w-[800px]  sm:h-[250px] mmd:h-[300px] lg:h-[350px] xl:w-[700px] xl:h-[450px] xxl:w-[800px] xxl:h-[500px] "
             />
           </div>
           <div ref={teamRef2} className="relative -top-44 lg:top-0">
-            <img src={info[0]?.team?.teamF2} alt="" />
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
+            <img
+              src={info[0]?.team?.teamF2}
+              alt=""
+              className=" w-[250px] ssm:w-[300px] relative left-16 ssm:left-32 smf:left-52 smm:left-0 smm:w-[800px]"
+            />
           </div>
         </div>
         <div ref={f25Ref}>
+          {isLoading && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+            </div>
+          )}
           <img
             src={info[0]?.hamilton?.hamf252}
             alt=""
-            className="   xxxl:h-[500px] w-[200px] h-[150px] ssm:w-[250px] ssm:h-[150px]  smm:w-[400px] smm:h-[250px] md:h-[300px] md:w-[450px]  lg:w-[550px] lg:h-[300px] xl:w-[650px] xxl:w-[750px] xl:h-[450px] xxxl:w-[800px] "
+            className="   xxxl:h-[500px] relative right-10 ssm:right-0 w-[280px] h-[200px] ssm:w-[350px] ssm:h-[200px] sfm:w-[350px] sfm:h-[250px] smm:w-[400px] smm:h-[250px] md:h-[300px] md:w-[450px]  lg:w-[550px] lg:h-[300px] xl:w-[650px] xxl:w-[750px] xl:h-[450px] xxxl:w-[800px] "
           />
         </div>
-        <div>
-          <div className="flex flex-row   gap-40 md:gap-72">
+        <div className="relative -top-10 smf:-top-20 md:top-0">
+          <div className="flex flex-col smm:flex-row   gap-40 md:gap-72">
             <div ref={leclf25Ref} className="relative -top-48 mmd:top-0">
+              {isLoading && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                  <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+                </div>
+              )}
               <img
                 alt="NextUI Album Cover"
-                className="md:w-[800px] w-[950px] lg:h-[400px] h-[180px] ssm:h-[220px]  smm:h-[280px]  md:h-[300px]  xxl:h-[500px] z-10 "
+                className="md:w-[800px]  smm:w-[950px] lg:h-[400px] h-[180px] ssm:h-[220px]  smm:h-[280px]  md:h-[300px]  xxl:h-[500px] z-10 "
                 src={info[0]?.leclerc?.leclf251}
               />
             </div>
             <div ref={hamf25Ref} className="">
+              {isLoading && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                  <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+                </div>
+              )}
               <img
                 alt="NextUI Album Cover"
-                className="  w-[800px] lg:h-[450px] h-[150px] ssm:h-[200px] smm:h-[250px] sm:h-[300px] md:h-[350px]  xxl:h-[500px] "
+                className=" w-[280px] ssm:w-[350px] h-[200px]  smm:w-[800px] lg:h-[450px] relative left-10 smm:left-0  ssm:h-[300px] smm:h-[250px] sm:h-[300px] md:h-[350px]  xxl:h-[500px] "
                 src={info[0]?.hamilton?.hamf251}
               />
             </div>
@@ -204,7 +233,7 @@ export const BolidTeam = () => {
         </div>
         <div
           className=" relative top-96  -z-10 w-full
-        scale-100
+        scale-120
         sm:scale-110
         md:scale-125
         lg:scale-100

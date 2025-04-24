@@ -8,7 +8,7 @@ import { useFetchData } from "../../../HOC/useFetchData";
 
 export const Drivers = () => {
   const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo-9a1db4a8e2e6.herokuapp.com/getImages"
+    "https://ferraritifo.onrender.com/getImages"
   );
 
   const { state } = useAppContext();
@@ -155,10 +155,15 @@ export const Drivers = () => {
       <div className="flex flex-row justify-between w-full">
         <div ref={hamiltonRef} className="flex flex-col">
           <h1 className="sm:text-3xl mmd:text-4xl font-bold">
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               src={info[0]?.hamilton?.propf}
               alt=""
-              className=" w-[200px] smm:w-[250px] sm:w-[300px]  xl:w-[400px]  "
+              className=" w-[150px] smf:w-[250px] sm:w-[300px]  xl:w-[400px]  "
             />
             𝑳𝒆𝒘𝒊𝒔 𝑯𝒂𝒎𝒊𝒍𝒕𝒐𝒏
           </h1>
@@ -166,10 +171,15 @@ export const Drivers = () => {
 
         <div ref={leclercRef} className="flex flex-col">
           <h1 className="sm:text-3xl mmd:text-4xl font-bold">
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               src={info[0]?.leclerc?.propf}
               alt=""
-              className=" w-[192px]  smm:w-[240px] sm:w-[290px] md:w-[300px]  xl:w-[400px]  "
+              className=" w-[150px]  smf:w-[240px] sm:w-[290px] md:w-[300px]  xl:w-[400px]  "
             />
             𝑪𝒉𝒂𝒓𝒍𝒆𝒔 𝑳𝒆𝒄𝒍𝒆𝒓𝒄
           </h1>
@@ -199,6 +209,11 @@ export const Drivers = () => {
           className="relative top-0 md:top-40  lg:top-72 xl:top-48 xxl:top-0"
         >
           <div ref={hamlimg}>
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               src={info[0]?.hamilton?.ham1}
               alt=""
@@ -209,9 +224,14 @@ export const Drivers = () => {
         <motion.div
           whileHover={{ scale: [null, 1.1, 1.1] }}
           transition={{ duration: 1 }}
-          className=" relative  top-0 md:top-40 md:left-0 lg:top-40 xl:top-0 xxl:top-0"
+          className=" relative right-10 smm:right-0  top-0 md:top-40 md:left-0 lg:top-40 xl:top-0 xxl:top-0"
         >
           <div ref={hamlecl}>
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               src={info[0]?.team?.hamlecl}
               alt=""
@@ -225,6 +245,11 @@ export const Drivers = () => {
           className=" relative  top-0 md:top-40 lg:top-72 xxl:top-0"
         >
           <div ref={leclrimg}>
+            {isLoading && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+              </div>
+            )}
             <img
               alt="NextUI Album Cover"
               className="w-[1100px] lg:w-[900px] rounded-md"

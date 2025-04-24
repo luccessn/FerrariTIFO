@@ -9,14 +9,18 @@ export const SecondSlide = () => {
       <div>
         <Header />
       </div>
-      <div>
-        <Intro />
-      </div>
-      <div className="relative top-96">
-        <Drivers />
-      </div>
-      <div className="relative top-96">
-        <BolidTeam />
+      <div className="flex flex-col gap-96 smm:gap-0">
+        <div>
+          <Intro />
+        </div>
+        <div className="relative top-40 smm:top-96">
+          <div className="relative top-96">
+            <Drivers />
+          </div>
+          <div className="relative -top-20 smm:top-40 mmd:top-96">
+            <BolidTeam />
+          </div>
+        </div>
       </div>
     </div>
   );
