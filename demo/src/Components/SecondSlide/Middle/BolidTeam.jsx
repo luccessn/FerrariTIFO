@@ -30,7 +30,6 @@ export const BolidTeam = () => {
       const setInitialValues = () => {
         const isMobile = window.innerWidth < 768;
         const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-        const isLaptop = window.innerWidth >= 1024 && window.innerWidth < 1280;
 
         // Set initial values based on screen size
         gsap.set(teamRef1.current, {
@@ -63,7 +62,6 @@ export const BolidTeam = () => {
       const createTimeline = () => {
         const isMobile = window.innerWidth < 768;
         const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-        const isLaptop = window.innerWidth >= 1024 && window.innerWidth < 1280;
 
         // Define responsive values
         const scrubValue = isMobile ? 2 : isTablet ? 2.5 : 3;
