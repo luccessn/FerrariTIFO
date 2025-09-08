@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAppContext } from "../../../Context/AppContextProvider";
 import { motion } from "framer-motion";
-import { useFetchData } from "../../../HOC/useFetchData";
 import videoenz1 from "../../../Videos/videonz1.mp4";
 import videoenz2 from "../../../Videos/videonz2.mp4";
 // import { useFetchData } from "../../../HOC/useFetchData";
@@ -11,9 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 export const Intro = () => {
   const { state } = useAppContext();
   //fetch
-  const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo.onrender.com/getImages"
-  );
 
   //gsap
   const sectionRef = useRef(null);
@@ -61,6 +57,7 @@ export const Intro = () => {
               : "bottom 40%",
             scrub: srubValue,
             markers: false,
+            once: true,
           },
         });
         tl.to(firstvdRef.current, {
@@ -71,6 +68,7 @@ export const Intro = () => {
           secondvdRef.current,
           {
             x: isMobile ? 50 : 100,
+            y: isMobile ? 200 : 300,
             opacity: 1,
             ease: "power1.inOut",
           },
@@ -99,9 +97,7 @@ export const Intro = () => {
   // if (error) {
   //   return <h1>ER: {error}</h1>;
   // }
-  if (error) {
-    return <h1>ER: {error}</h1>;
-  }
+
   return (
     <div
       ref={sectionRef}
@@ -130,37 +126,35 @@ export const Intro = () => {
         </motion.div>
       </div>
       <div>
-        <div className="flex flex-col gap-60 smm:flex-row justify-between smm:gap-28  xl:gap-48 xxl:gap-60 xxxl:gap-96 ">
-          <div c>
+        <div className="flex flex-col gap-60 md:flex-row justify-between smm:gap-28  xl:gap-48 xxl:gap-60 xxxl:gap-96 ">
+          <div className="hidden mmd:block">
             <video
               ref={firstvdRef}
               autoPlay
               muted
               loop
-              className="rounded-lg w-[350px] ssm:w-[350px] sfm:w-[450px] smm:w-[350px] lg:w-[550px] xl:w-[700px]"
+              playsInline
+              className="rounded-lg  w-[350px] ssm:w-[350px] sfm:w-[450px] smm:w-[350px] lg:w-[550px] xl:w-[700px] pointer-events-none select-none"
             >
               <source src={videoenz1} type="video/mp4" />
             </video>
+
             <video
               ref={secondvdRef}
               autoPlay
               muted
               loop
-              className="rounded-lg relative top-10  smm:top-0 w-[330px]  ssm:w-[350px] sfm:w-[450px]  smm:w-[350px]  lg:w-[550px] xl:w-[700px]"
+              playsInline
+              className="rounded-lg relative top-10 smm:top-0 w-[330px] ssm:w-[350px] sfm:w-[450px] smm:w-[350px] lg:w-[550px] xl:w-[700px] pointer-events-none select-none"
             >
               <source src={videoenz2} type="video/mp4" />
             </video>
           </div>
           <div className="  w-[350px] relative  ssm:w-[400px]  sfm:w-[450px] smm:w-[300px] md:w-[360px] mmd:w-[450px] lg:w-[600px] xl:w-[700px]">
-            {isLoading && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
-              </div>
-            )}
             <img
               className=" rounded-md h-[500px] sfm:h-[500px] smm:h-[600px] md:h-[700px]  lg:h-[900px] xl:h-[1000px] w-full object-cover"
               alt=""
-              src={info[0]?.ferrari?.frenzo}
+              src="https://i.postimg.cc/q7tFgCqc/enzferrari.jpg"
             />
           </div>
         </div>

@@ -75,6 +75,7 @@ export const Drivers = () => {
               : "bottom 100%",
             scrub: scrubValue,
             markers: false,
+            once: true,
           },
         });
         // Create animation sequence
@@ -154,35 +155,33 @@ export const Drivers = () => {
     >
       <div className="flex flex-row justify-between w-full">
         <div ref={hamiltonRef} className="flex flex-col">
-          <h1 className="sm:text-3xl mmd:text-4xl font-bold">
-            {isLoading && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
-              </div>
-            )}
-            <img
-              src={info[0]?.hamilton?.propf}
-              alt=""
-              className=" w-[150px] smf:w-[250px] sm:w-[300px]  xl:w-[400px]  "
-            />
-            𝑳𝒆𝒘𝒊𝒔 𝑯𝒂𝒎𝒊𝒍𝒕𝒐𝒏
-          </h1>
+          {isLoading ? (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+            </div>
+          ) : (
+            <div>
+              <img
+                src={info[0]?.hamilton?.propf}
+                alt=""
+                className="w-[160px] sm:w-[210px] md:w-[260px] lg:w-[310px] xl:w-[410px] "
+              />
+              <p className="text-center text-xl sm:text-2xl md:text-3xl font-bold">
+                𝑳𝒆𝒘𝒊𝒔 𝑯𝒂𝒎𝒊𝒍𝒕𝒐𝒏
+              </p>
+            </div>
+          )}
         </div>
 
         <div ref={leclercRef} className="flex flex-col">
-          <h1 className="sm:text-3xl mmd:text-4xl font-bold">
-            {isLoading && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
-              </div>
-            )}
-            <img
-              src={info[0]?.leclerc?.propf}
-              alt=""
-              className=" w-[150px]  smf:w-[240px] sm:w-[290px] md:w-[300px]  xl:w-[400px]  "
-            />
+          <img
+            src={info[0]?.leclerc?.propf}
+            alt="Charles Leclerc"
+            className="w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[400px]  rounded-md"
+          />
+          <p className="text-center text-xl sm:text-2xl md:text-3xl font-bold">
             𝑪𝒉𝒂𝒓𝒍𝒆𝒔 𝑳𝒆𝒄𝒍𝒆𝒓𝒄
-          </h1>
+          </p>
         </div>
       </div>
       <div

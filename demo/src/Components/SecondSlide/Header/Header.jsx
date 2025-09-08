@@ -24,7 +24,13 @@ export const Header = () => {
           : "opacity-0 -translate-y-10"
       }`}
     >
-      <video autoPlay muted loop className="w-full object-cover h-screen">
+      <video
+        autoPlay
+        muted
+        loop
+        className="w-full object-cover h-screen pointer-events-none select-none"
+        playsInline
+      >
         <source src={frheader} type="video/mp4" />
       </video>
       <div className="top-shadow absolute left-0 top-0 w-full h-[180px] bg-gradient-to-b from-black to-transparent"></div>
