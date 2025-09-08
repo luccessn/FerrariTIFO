@@ -25,7 +25,6 @@ export const Drivers = () => {
       const setInitialValues = () => {
         const isMobile = window.innerWidth < 768;
         const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-        const isLaptop = window.innerWidth >= 1024 && window.innerWidth < 1280;
         // Set initial values
         gsap.set(hamiltonRef.current, {
           x: isMobile ? -100 : -200,
