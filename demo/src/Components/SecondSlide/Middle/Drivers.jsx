@@ -5,10 +5,12 @@ import { useAppContext } from "../../../Context/AppContextProvider";
 import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import { useFetchData } from "../../../HOC/useFetchData";
-
+///
+import hamav from "../../../Image/ham.svg";
+import leclav from "../../../Image/lecl.svg";
 export const Drivers = () => {
   const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo.onrender.com/getImages"
+    "https://ferraritifo.onrender.com/getImages",
   );
 
   const { state } = useAppContext();
@@ -61,17 +63,17 @@ export const Drivers = () => {
             start: isMobile
               ? "top 150%"
               : isTablet
-              ? "top 140%"
-              : isLaptop
-              ? "top 130%"
-              : "top 80%",
+                ? "top 140%"
+                : isLaptop
+                  ? "top 130%"
+                  : "top 80%",
             end: isMobile
               ? "bottom 170%"
               : isTablet
-              ? "bottom 180%"
-              : isLaptop
-              ? "bottom 185%"
-              : "bottom 100%",
+                ? "bottom 180%"
+                : isLaptop
+                  ? "bottom 185%"
+                  : "bottom 100%",
             scrub: scrubValue,
             markers: false,
             once: true,
@@ -90,7 +92,7 @@ export const Drivers = () => {
               opacity: 1,
               duration: animDuration,
             },
-            "<"
+            "<",
           )
           .to(frlogoRef.current, {
             y: isMobile ? 25 : 50,
@@ -102,7 +104,7 @@ export const Drivers = () => {
               y: isMobile ? -450 : isTablet ? -700 : -900,
               opacity: 1,
             },
-            "<"
+            "<",
           )
           .to(
             leclrimg.current,
@@ -110,7 +112,7 @@ export const Drivers = () => {
               y: isMobile ? -400 : isTablet ? -650 : -800,
               opacity: 1,
             },
-            "<"
+            "<",
           )
           .to(hamlecl.current, {
             y: isMobile ? -200 : isTablet ? -300 : -400,
@@ -161,7 +163,8 @@ export const Drivers = () => {
           ) : (
             <div>
               <img
-                src={info[0]?.hamilton?.propf}
+                // src={info[0]?.hamilton?.propf}
+                src={hamav}
                 alt=""
                 className="w-[160px] sm:w-[210px] md:w-[260px] lg:w-[310px] xl:w-[410px] "
               />
@@ -174,7 +177,8 @@ export const Drivers = () => {
 
         <div ref={leclercRef} className="flex flex-col">
           <img
-            src={info[0]?.leclerc?.propf}
+            // src={info[0]?.leclerc?.propf}
+            src={leclav}
             alt="Charles Leclerc"
             className="w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[400px]  rounded-md"
           />
@@ -206,16 +210,18 @@ export const Drivers = () => {
           transition={{ duration: 1 }}
           className="relative top-0 md:top-40  lg:top-72 xl:top-48 xxl:top-0"
         >
-          <div ref={hamlimg}>
+          {/* <div ref={hamlimg}> */}
+          <div ref={hamlimg} className=" relative left-14">
             {isLoading && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
               </div>
             )}
             <img
-              src={info[0]?.hamilton?.ham1}
+              // src={info[0]?.hamilton?.ham1}
+              src="https://i.postimg.cc/x11rGcHm/ham.png"
               alt=""
-              className="w-[1100px] lg:w-[900px] rounded-sm"
+              className="w-[1100px] lg:w-[600px] rounded-sm  "
             />
           </div>
         </motion.div>
@@ -224,14 +230,16 @@ export const Drivers = () => {
           transition={{ duration: 1 }}
           className=" relative right-10 smm:right-0  top-0 md:top-40 md:left-0 lg:top-40 xl:top-0 xxl:top-0"
         >
-          <div ref={hamlecl}>
+          {/* <div ref={hamlecl}> */}
+          <div ref={hamlecl} className="relative left-48 top-10">
             {isLoading && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
               </div>
             )}
             <img
-              src={info[0]?.team?.hamlecl}
+              // src={info[0]?.team?.hamlecl}
+              src="https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/fom-website/2025/Miscellaneous/hamilton-leclerc-ferrari-suits-2025.webp"
               alt=""
               className="w-[1100px] lg:w-[900px] rounded-sm"
             />
@@ -242,16 +250,17 @@ export const Drivers = () => {
           transition={{ duration: 1 }}
           className=" relative  top-0 md:top-40 lg:top-72 xxl:top-0"
         >
-          <div ref={leclrimg}>
+          {/* <div ref={leclrimg}> */}
+          <div ref={leclrimg} className="relative right-5">
             {isLoading && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
               </div>
             )}
             <img
-              alt="NextUI Album Cover"
-              className="w-[1100px] lg:w-[900px] rounded-md"
-              src={info[0]?.leclerc?.lecl1}
+              className="w-[1100px] lg:w-[700px] h-[700px]  rounded-md"
+              // src={info[0]?.leclerc?.lecl1}
+              src="https://i.postimg.cc/VsWH7zzF/lecl.png"
             />
           </div>
         </motion.div>

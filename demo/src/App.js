@@ -44,11 +44,11 @@ function App() {
   if (!isAllowed) {
     return (
       <div className="App">
-        <div className="flex flex-col justify-center items-center h-screen bg-black text-white ">
+        <div className="flex  flex-col justify-center items-center h-screen bg-black text-white ">
           <img
             src="https://i.postimg.cc/cJVb34tp/frwhite.png"
             alt="Ferrari Logo"
-            className="w-40 mb-6 transition-opacity duration-1000 ease-in-out opacity-0 animate-fade-in"
+            className="w-40 mb-6  transition-opacity duration-1000 ease-in-out opacity-0 animate-fade-in"
           />
           <h2 className=" text-medium sfm:text-lg font-mono text-center max-w-md">
             ⚠️ This website is only designed for

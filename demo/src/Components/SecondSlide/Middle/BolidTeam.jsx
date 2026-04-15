@@ -9,13 +9,13 @@ import { useFetchData } from "../../../HOC/useFetchData";
 import Aurora from "../../UI/Aura";
 export const BolidTeam = () => {
   const [info, error, isLoading] = useFetchData(
-    "https://ferraritifo.onrender.com/getImages"
+    "https://ferraritifo.onrender.com/getImages",
   );
 
   const goYT = () => {
     window.open(
       "https://www.youtube.com/watch?v=cB6uA-s3bHc&t=11900s",
-      "_blank"
+      "_blank",
     );
   };
   const { state } = useAppContext();
@@ -38,11 +38,12 @@ export const BolidTeam = () => {
           opacity: 1,
         });
         gsap.set(teamRef2.current, {
-          y: isMobile ? 1200 : isTablet ? 1400 : 1600,
-          opacity: 0,
+          y: isMobile ? 1200 : isTablet ? 1600 : 1800,
+          opacity: 1,
         });
         gsap.set(f25Ref.current, {
-          y: 0,
+          y: isMobile ? 900 : isTablet ? 400 : 200,
+          //
           x: isMobile ? 80 : 120,
           opacity: 1,
         });
@@ -53,7 +54,7 @@ export const BolidTeam = () => {
         gsap.set(leclf25Ref.current, {
           y: isMobile ? 1200 : isTablet ? 1300 : 1500,
           x: isMobile ? 30 : 50,
-          opacity: 0,
+          opacity: 1,
         });
       };
 
@@ -94,7 +95,7 @@ export const BolidTeam = () => {
               opacity: 1,
               ease: "power1.inOut",
             },
-            "<"
+            "<",
           )
           .to(
             f25Ref.current,
@@ -103,7 +104,7 @@ export const BolidTeam = () => {
               opacity: 1,
               ease: "power1.inOut",
             },
-            "<"
+            "<",
           )
           .to(
             hamf25Ref.current,
@@ -112,7 +113,7 @@ export const BolidTeam = () => {
               opacity: 1,
               ease: "power1.inOut",
             },
-            "<"
+            "<",
           )
           .to(
             leclf25Ref.current,
@@ -121,7 +122,7 @@ export const BolidTeam = () => {
               opacity: 1,
               ease: "power1.inOut",
             },
-            "<"
+            "<",
           );
 
         return tl;
@@ -172,7 +173,8 @@ export const BolidTeam = () => {
             )}
             <img
               alt=""
-              src={info[0]?.team?.teamF1}
+              src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/8a7bae9b-9648-4bd0-a0aa-4fc910ded616.jpg?v=149"
+              // src={info[0]?.team?.teamF1}
               className=" h-[200px] w-[300px] sfm:w-[350px] sfm:h-[250px]  smm:h-[200px]  smm:w-[900px] sm:w-[800px]  sm:h-[250px] mmd:h-[300px] lg:h-[350px] xl:w-[700px] xl:h-[450px] xxl:w-[800px] xxl:h-[500px] "
             />
           </div>
@@ -183,7 +185,8 @@ export const BolidTeam = () => {
               </div>
             )}
             <img
-              src={info[0]?.team?.teamF2}
+              // src={info[0]?.team?.teamF2}
+              src="https://i.postimg.cc/52Lz32M7/hamlec.png"
               alt=""
               className=" w-[250px] ssm:w-[300px] relative left-16 ssm:left-32 smf:left-52 smm:left-0 smm:w-[800px]"
             />
@@ -196,7 +199,8 @@ export const BolidTeam = () => {
             </div>
           )}
           <img
-            src={info[0]?.hamilton?.hamf252}
+            // src={info[0]?.hamilton?.hamf252}
+            src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/8a7bae9b-9648-4bd0-a0aa-4fc910ded616.jpg?v=149"
             alt=""
             className="   xxxl:h-[500px] relative right-10 ssm:right-0 w-[280px] h-[200px] ssm:w-[350px] ssm:h-[200px] sfm:w-[350px] sfm:h-[250px] smm:w-[400px] smm:h-[250px] md:h-[300px] md:w-[450px]  lg:w-[550px] lg:h-[300px] xl:w-[650px] xxl:w-[750px] xl:h-[450px] xxxl:w-[800px] "
           />
@@ -212,7 +216,8 @@ export const BolidTeam = () => {
               <img
                 alt="NextUI Album Cover"
                 className="md:w-[800px]  smm:w-[950px] lg:h-[400px] h-[180px] ssm:h-[220px]  smm:h-[280px]  md:h-[300px]  xxl:h-[500px] z-10 "
-                src={info[0]?.leclerc?.leclf251}
+                // src={info[0]?.leclerc?.leclf251}
+                src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/17d19426-8979-4d9e-bcac-d11e0fefa2b5.jpg?v=149"
               />
             </div>
             <div ref={hamf25Ref} className="">
@@ -223,8 +228,9 @@ export const BolidTeam = () => {
               )}
               <img
                 alt="NextUI Album Cover"
-                className=" w-[280px] ssm:w-[350px] h-[200px]  smm:w-[800px] lg:h-[450px] relative left-10 smm:left-0  ssm:h-[300px] smm:h-[250px] sm:h-[300px] md:h-[350px]  xxl:h-[500px] "
-                src={info[0]?.hamilton?.hamf251}
+                className=" w-[280px] ssm:w-[350px] h-[200px]  smm:w-[700px] lg:h-[450px] relative left-10 smm:left-0  ssm:h-[300px] smm:h-[250px] sm:h-[300px] md:h-[350px]  xxl:h-[500px] "
+                // src={info[0]?.hamilton?.hamf251}
+                src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/719da314-3122-42e6-9afd-aeabbc281923.jpg?v=149"
               />
             </div>
           </div>
