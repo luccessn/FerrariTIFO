@@ -200,9 +200,9 @@ export const BolidTeam = () => {
           )}
           <img
             // src={info[0]?.hamilton?.hamf252}
-            src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/8a7bae9b-9648-4bd0-a0aa-4fc910ded616.jpg?v=149"
+            src="https://ferrari-view.thron.com/api/xcontents/resources/delivery/getThumbnail/ferrari/1920x1080/151114b8-9049-4be6-9c14-74c79fd6193b.jpg?v=153"
             alt=""
-            className="   xxxl:h-[500px] relative right-10 ssm:right-0 w-[280px] h-[200px] ssm:w-[350px] ssm:h-[200px] sfm:w-[350px] sfm:h-[250px] smm:w-[400px] smm:h-[250px] md:h-[300px] md:w-[450px]  lg:w-[550px] lg:h-[300px] xl:w-[650px] xxl:w-[750px] xl:h-[450px] xxxl:w-[800px] "
+            className="   xxxl:h-[600px] relative right-10 ssm:right-0 w-[280px] h-[300px] ssm:w-[350px] ssm:h-[300px] sfm:w-[350px] sfm:h-[350px] smm:w-[400px] smm:h-[350px] md:h-[400px] md:w-[450px]  lg:w-[550px] lg:h-[400px] xl:w-[650px] xxl:w-[750px] xl:h-[550px] xxxl:w-[800px] "
           />
         </div>
         <div className="relative -top-10 smf:-top-20 md:top-0">
